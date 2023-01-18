@@ -49,11 +49,11 @@ io.on("connection", (socket) => {
     socket.to(data.room).emit("webRTC-signaling", data);
   });
 
-  if (count > 2) {
-    socket.emit("error", { message: "reach the limit of connections" });
-    socket.disconnect();
-    console.log("Disconnected...");
-  }
+//   if (count > 2) {
+//     socket.emit("error", { message: "reach the limit of connections" });
+//     socket.disconnect();
+//     console.log("Disconnected...");
+//   }
 
   socket.on("disconnect", () => {
     console.log(`User disconnnect`);
